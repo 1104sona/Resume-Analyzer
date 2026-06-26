@@ -143,14 +143,16 @@ router.post(
 
     } catch (error) {
 
-      console.log(error);
+  console.error("FULL ERROR:", error);
 
-      res.status(500).json({
-        message: "Error reading PDF"
-      });
-    }
+  res.status(500).json({
+    success: false,
+    error: error.message,
+    stack: error.stack
+  });
+
   }
-);
+});
 router.get("/history", async (req, res) => {
   try {
 
