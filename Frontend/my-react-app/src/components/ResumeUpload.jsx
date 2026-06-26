@@ -20,7 +20,7 @@ function ResumeUpload({ setAnalysis, jobDescription }) {
     try {
 
       const response = await axios.post(
-        "http://localhost:5000/api/upload",
+        "https://resume-analyzer-backend-lohg.onrender.com/api/upload",
         formData
       );
       
